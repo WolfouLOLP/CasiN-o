@@ -1,75 +1,29 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🎰 Casino Étoile</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Neon Casino</title>
+    <link rel="stylesheet" href="page.css">
 </head>
 <body>
 
+    <video autoplay muted loop id="bg-video">
+        <source src="../1206.mp4" type="video/mp4">
+    </video>
 
-  <!-- Zone principale -->
-  <header id="header" class="hidden">
-    <div id="token-balance">Jetons : 0</div>
-    <button id="refill-tokens">Recharger</button>
-  </header>
+    <div class="overlay"></div>
 
-<!-- HTML -->
-<audio id="music1" src="../public/musique.mp3" loop></audio>
-<audio id="music2" src="../public/musique2.mp3" loop></audio>
+    <div class="login-box" id="loginBox">
+        <h1>Neon Casino</h1>
+        <input type="text" id="username" placeholder="Nom d'utilisateur">
+        <input type="password" id="password" placeholder="Mot de passe">
 
-<button id="play-music">Jouer Musique</button>
-<button id="change-music">Changer Musique</button>
+        <button onclick="login()">Se connecter</button>
+        <button onclick="createAccount()">Créer un compte</button>
 
+        <p id="loginMsg"></p>
+    </div>
 
-
-  <div id="menu" class="hidden">
-    <button class="game-btn" onclick="openGame('slots')">🎰 Slots</button>
-    <button class="game-btn" onclick="openGame('roulette')">🎡 Roulette</button>
-    <button class="game-btn" onclick="openGame('dice')">🎲 Dés</button>
-    <button class="game-btn" onclick="openGame('coinFlip')">🪙 Pile ou Face</button>
-    <button class="game-btn" onclick="openGame('guessNumber')">🔢 Chiffre Mystère</button>
-    <button class="game-btn" onclick="openGame('blackjack')">🃏 Blackjack</button>
-    <button id="double-or-nothing" class="special-btn" style="display:none;">
-    🎲 DOUBLE OU RIEN 🎲
-</button>
-
-    <button class="game-btn" onclick="openShop()">🏪 Magasin</button>
-    <button class="game-btn" onclick="openLeaderboard()">🏆 Leaderboard</button>
-     <button class="game-btn" id="open-chest">🧰 Coffre Mystère</button>
-  </div>
-
-  <div id="game-area" class="hidden">
-      <!-- Zone de messages -->
-  <div id="message-area"></div>
-    <div id="game-container"></div>
-  </div>
-
-
-  <div id="shop-area" class="hidden">
-  
-    <h2>🏪 Magasin</h2>
-    <div id="shop-items"></div>
-  </div>
-
-  <div id="leaderboard-area" class="hidden">
-    <h2>🏆 Top Joueurs</h2>
-    <ul id="leaderboard-list"></ul>
-  </div>
-  <div id="chat-area">
-  <h3>💬 Chat du Casino</h3>
-  <div id="chat-messages"></div>
-  <input type="text" id="chat-input" placeholder="Écrire un message...">
-  <button id="send-chat">Envoyer</button>
-</div>
-
-
-  <!-- Animation jetons -->
-  <div id="token-animation"></div>
-
-</div>
-
-<script src="game.js"></script>
+<script src="page.js"></script>
 </body>
 </html>
