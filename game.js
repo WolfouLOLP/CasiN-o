@@ -762,6 +762,7 @@ function animateTokens(count){
 const musics = [
   document.getElementById('music1'),
   document.getElementById('music2')
+  document.getElementById('music3')
 ];
 let currentMusic = 0;
 
@@ -775,4 +776,5 @@ document.getElementById('change-music').onclick = () => {
   currentMusic = (currentMusic + 1) % musics.length;
   musics[currentMusic].play().catch(err => console.log(err));
 };
+
 
