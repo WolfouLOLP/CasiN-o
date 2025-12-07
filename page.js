@@ -44,5 +44,6 @@ function login() {
 
     localStorage.setItem("currentUser", user);
 
-    window.location.href = "index.html";
+    window.location.href = "casino.html";
 }
+
