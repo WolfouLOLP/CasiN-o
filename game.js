@@ -776,6 +776,22 @@ document.getElementById('change-music').onclick = () => {
   currentMusic = (currentMusic + 1) % musics.length;
   musics[currentMusic].play().catch(err => console.log(err));
 };
+const music = document.getElementById('bg-music');
+const musicBtn = document.getElementById('music-toggle');
+
+let musicPlaying = false;
+
+musicBtn.onclick = () => {
+  if (!musicPlaying) {
+    music.play();
+    musicBtn.innerText = '🔇 Couper la musique';
+  } else {
+    music.pause();
+    musicBtn.innerText = '🎵 Activer la musique';
+  }
+  musicPlaying = !musicPlaying;
+};
+
 
 
 
